@@ -12,6 +12,7 @@ function makePageForEpisodes(episodeList) {
      container.className = "column";
      rootElem.appendChild(container);
      let name = episodeList.name;
+     let season = episodeList.season;
      let number = episodeList.number;
     let image = episodeList.image.medium;
     let summary = episodeList.summary;
@@ -19,6 +20,10 @@ function makePageForEpisodes(episodeList) {
     let h1El = document.createElement("h1");
     container.appendChild(h1El);
     h1El.textContent = name + number;
+
+    let seas = document.createElement("h2");
+    container.appendChild(seas);
+    seas = season;
 
     let elementImg = document.createElement("img");
     container.appendChild(elementImg);
