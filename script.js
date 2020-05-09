@@ -6,7 +6,7 @@ function setup() {
 
 function makePageForEpisodes(episodeList) {
   const rootElem = document.getElementById("root");//getting root element from HTML page
-  rootElem.textContent = `Got ${episodeList.length} episode(s)`;//
+  rootElem.textContent = `Got ${episodeList.length} episode()`;//
   episodeList.forEach((episodeList) => {
      let container = document.createElement("div");
      container.className = "column";
