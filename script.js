@@ -23,7 +23,7 @@ function makePageForEpisodes(episodeList) {
 
     let elementSeason = document.createElement("h1");
     container.appendChild(elementSeason);
-    elementSeason.textContent = `S`{season};
+    elementSeason.textContent = `S`+ season;
 
     let elementImg = document.createElement("img");
     container.appendChild(elementImg);
