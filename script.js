@@ -8,9 +8,9 @@ function makePageForEpisodes(episodeList) {
   const rootElem = document.getElementById("root");//getting root element from HTML page
   rootElem.textContent = `Got ${episodeList.length} episode(s)`;//
   episodeList.forEach((episodeList) => {
-     let container = document.createElement("div");
-     container.className = "column";
-     rootElem.appendChild(container);
+     let divElement = document.createElement("div");
+     divElement.className = "column";
+     rootElem.appendChild(divElement);
      let name = episodeList.name;
      let season = episodeList.season;
      let number = episodeList.number;
@@ -18,21 +18,21 @@ function makePageForEpisodes(episodeList) {
     let summary = episodeList.summary;
 
     let h1El = document.createElement("h1");
-    container.appendChild(h1El);
+    divElement.appendChild(h1El);
     h1El.textContent = name;
 
     let elementSeason = document.createElement("h1");
-    container.appendChild(elementSeason);
+    divElement.appendChild(elementSeason);
     let elementNumber = document.createElement("h1");
     elementSeason.textContent = `S0`+ season + `E0` + number;
 
 
     let elementImg = document.createElement("img");
-    container.appendChild(elementImg);
+    divElement.appendChild(elementImg);
     elementImg.src = image;
 
     let elementSummary = document.createElement("p");
-    container.appendChild(elementSummary);
+    divElement.appendChild(elementSummary);
     elementSummary.innerHTML = summary;
 
   });
