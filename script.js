@@ -41,12 +41,12 @@ function makePageForEpisodes(episodeList) {//function to loop through all elemen
   }
   //this makes a promise to this tvmaze (fresh prince nice tv show)
   function searchShow(query){
-    const url = `https://api.tvmaze.com/shows/582/episodes`;
+    const url = `https://api.tvmaze.com/shows/82/episodes`;
     fetch(url)
    .then(response => response.json())
    .then((jsonData) => {
       const results = jsonData.map(element => element.name);
-      renderResults(results);
+      makePageForEpisodes(results);
    
     });
 }
