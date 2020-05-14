@@ -45,7 +45,7 @@ function makePageForEpisodes(episodeList) {//function to loop through all elemen
     fetch(url)
    .then(response => response.json())
    .then((jsonData) => {
-      //const results = jsonData.map(element => element.name);
+      const results = jsonData.map(element => element.show.name);
       makePageForEpisodes(results);
    
     });
