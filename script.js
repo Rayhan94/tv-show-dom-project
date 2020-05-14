@@ -40,16 +40,20 @@ function makePageForEpisodes(episodeList) {//function to loop through all elemen
    
   }
   //this makes a promise to this tvmaze (fresh prince nice tv show)
-  fetch("https://api.tvmaze.com/shows/582/episodes")
-     .then((response) => {
-    console.log("response");
-    console.log(response);//seeing what the response looks like
-    return response.json();//api is json format
-  })
-
-  .then((jsonData) => {
-    console.log("data found");
-    console.log(jsonData);
-});
-
-window.onload = setup;
+  function searchShow(query){
+    const url = `https://api.tvmaze.com/shows/582/episodes`;
+    fetch(url)
+   .then(response => response.json())
+   .then((jsonData) => {
+      const results = jsonData.map(element => element.name);
+      renderResults(results);
+   
+    });
+}
+  
+window.onload = () => {
+  const searchElement = document.getElementById("searchField");
+  searchElement.onkeyup = (event) => {
+     searchShow(searchElement.value);
+  };
+}
