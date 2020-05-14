@@ -7,7 +7,7 @@ function setup() {//function for setting up api/function with json data
 function makePageForEpisodes(episodeList) {//function to loop through all elements 
   const rootElem = document.getElementById("root");//getting root element from HTML page
   rootElem.textContent = `Got ${episodeList.length} episode(s) and data has (originally) come from TVMaze.com`;//displaying how many episodes
-  episodeList.forEach((episodeList) => {//using foreach to manipulate the episode.js json file
+  results.forEach((episodeList) => {//using foreach to manipulate the episode.js json file
      let divElement = document.createElement("div");//create div element to put all elements here
      divElement.className = "column";//to put it in a column
      rootElem.appendChild(divElement);//div element gets added to the root so can add the json elements to it
